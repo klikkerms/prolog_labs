@@ -58,5 +58,4 @@ parent(anya,assol).
 parent(stepa,vlad).
 parent(ksenia,vlad).
 
-man:-man(X),write(X),nl, fail.
-woman:-woman(X),write(X),nl, fail.
+children(X):-parent(X,Y),write(Y),nl,fail.
