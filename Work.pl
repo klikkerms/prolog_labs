@@ -23,8 +23,8 @@ woman(ksenia).
 
 parent(artem,igor).
 parent(artem,semyon).
-parent(maria,igor).
-parent(maria,semyon).
+parent(marina,igor).
+parent(marina,semyon).
 
 parent(grisha,maria).
 parent(grisha,vitya).
@@ -58,4 +58,5 @@ parent(anya,assol).
 parent(stepa,vlad).
 parent(ksenia,vlad).
 
-children(X):-parent(X,Y),write(Y),nl,fail.
+mother(X,Y):-parent(X,Y),woman(X).
+mother(X):-mother(Y,X),write(Y),nl,fail.
