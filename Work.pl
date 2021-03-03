@@ -35,10 +35,10 @@ parent(diana,stepa).
 
 
 parent(sasha,anya).
-parent(sasha,ksenya).
+parent(sasha,ksenia).
 parent(sasha,roma).
 parent(alina,anya).
-parent(alina,ksenya).
+parent(alina,ksenia).
 parent(alina,roma).
 
 parent(semyon,misha).
@@ -58,5 +58,5 @@ parent(anya,assol).
 parent(stepa,vlad).
 parent(ksenia,vlad).
 
-brother(X,Y):-man(X),parent(Z,X),woman(Z),parent(Z,Y).
-brothers(X):-brother(Y,X),dif(X,Y),write(Y),nl,fail.
+sister(X,Y):-woman(X),parent(Z,X),parent(Z,Y).
+sisters(X):-sister(Y,X),dif(X,Y),write(Y),nl,fail.
