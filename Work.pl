@@ -58,5 +58,5 @@ parent(anya,assol).
 parent(stepa,vlad).
 parent(ksenia,vlad).
 
-sister(X,Y):-woman(X),parent(Z,X),parent(Z,Y).
-sisters(X):-sister(Y,X),dif(X,Y),write(Y),nl,fail.
+b_s(X,Y):-parent(Z,X),woman(Z),parent(Z,Y).
+b_s(X):-b_s(X,Y),dif(X,Y),write(Y),nl,fail.
