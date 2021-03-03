@@ -58,5 +58,5 @@ parent(anya,assol).
 parent(stepa,vlad).
 parent(ksenia,vlad).
 
-mother(X,Y):-parent(X,Y),woman(X).
-mother(X):-mother(Y,X),write(Y),nl,fail.
+son(X,Y):-parent(Y,X).
+son(X):-parent(X,Y),man(Y),write(Y),nl,fail.
