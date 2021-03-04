@@ -58,5 +58,6 @@ parent(anya,assol).
 parent(stepa,vlad).
 parent(ksenia,vlad).
 
+grand_pa(X,Y):-parent(Z,Y),parent(X,Z),man(X).
 grand_so(X,Y):-parent(Z,X),parent(Y,Z),man(X).
-grand_sons(X):-grand_so(Y,X),write(Y),nl,fail.
+grand_pa_and_son(X,Y):-grand_pa(X,Y),man(Y);grand_pa(Y,X),man(X).
