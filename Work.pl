@@ -58,6 +58,7 @@ parent(anya,assol).
 parent(stepa,vlad).
 parent(ksenia,vlad).
 
-brother(X,Y):-parent(Z,X),parent(Z,Y),man(X). 
-uncle(X,Y):-brother(X,Z),parent(Z,Y),dif(X,Z).
-uncles(X):-parent(Y,X),brother(Z,Y),dif(Y,Z),write(Z),nl,fail.
+sister(X,Y):-parent(Z,X),parent(Z,Y),woman(X).
+aunt(X,Y):-parent(Z,Y),sister(X,Z),dif(Z,X).
+aunt_all(X):-aunt(Y,X),write(Y),nl,fail.
+
