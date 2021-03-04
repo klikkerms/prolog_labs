@@ -58,4 +58,6 @@ parent(anya,assol).
 parent(stepa,vlad).
 parent(ksenia,vlad).
 
-grand_pa_and_da(X,Y):-parent(X,Z),parent(Z,Y),woman(Y);parent(Y,Z),parent(Z,X),woman(X).
+brother(X,Y):-parent(Z,X),parent(Z,Y),man(X). 
+uncle(X,Y):-brother(X,Z),parent(Z,Y),dif(X,Z).
+uncles(X):-parent(Y,X),brother(Z,Y),dif(Y,Z),write(Z),nl,fail.
