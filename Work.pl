@@ -111,4 +111,41 @@ country(brother,3).
 country(die_hard,1).
 country(taxi,0).
 
+question1(X1):-	write("What style will the film have?"),nl,
+				write("0. fantasy"),nl,
+                                write("2. comedy"),nl,
+                                write("3. action movie"),nl,
+                                write("4. triller"),nl,
+				read(X1).
+
+
+question2(X2):-	write("Rating on kinopoisk?"),nl,
+ write("0. hight rating"),nl,
+    write("1. middle rating"),nl,
+    read(X2).
+
+
+
+question3(X3):- write("The year of the film's creation?"),nl,
+    write("0. until 2000"),nl,
+                                write("1.  after 2000"),nl,
+				read(X3).
+
+question4(X4):- write("Duration of the film?"),nl,
+    write("0. 1.5-2h"),nl,
+    write("1. 2h+"),nl,
+    read(X4).
+
+
+
+question5(X5):- write("Select the country of creation?"),nl,
+    write("0. France"),nl,
+    write("1. USA"),nl,
+    write("2. Great Britain"),nl,
+    write("3. Russia"),nl,
+    read(X5).
+
+pr:- question1(X1),question2(X2),question3(X3),question4(X4),question5(X5),
+    style(X,X1),rating(X,X2),year_of_creation(X,X3),viewing_time(X,X4),country(X,X5),write(X).
+
 
