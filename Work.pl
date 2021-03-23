@@ -31,4 +31,7 @@ ezsum(N,Sum):-szsum(N,0,Sum).
 max(Max,Max):-Max div 10 =:= 0,!.
 max(N,Max):-Max2 is N mod 10, N1 is N div 10,max(N1,Max1),(Max1>Max2 -> Max is Max1;Max is Max2).
 
+maximum(0,CosMax,CosMax):-!.
+maximum(N,RES,Max):-MAKZ is N mod 10,N1 is N div 10,(MAKZ>RES -> MAXI is MAKZ;MAXI is RES), maximum(N1,MAXI,Max).
+ezmax(N,Max):-maximum(N,0,Max).
 
