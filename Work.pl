@@ -21,3 +21,8 @@ fib1(N,X):-fibonach(N,1,1,0,X).
 
 sum(X,S):- 0 is X div 10,S=X,!.
 sum(X,S):-X_1 is X div 10,sum(X_1,S_1),S is S_1+X mod 10.
+
+
+szsum(0,RES,RES):-!.
+szsum(N,RES,Sum):-Mod is N mod 10,N1 is N div 10,EZ is RES + Mod,szsum(N1,EZ,Sum).
+ezsum(N,Sum):-szsum(N,0,Sum).
