@@ -26,3 +26,9 @@ sum(X,S):-X_1 is X div 10,sum(X_1,S_1),S is S_1+X mod 10.
 szsum(0,RES,RES):-!.
 szsum(N,RES,Sum):-Mod is N mod 10,N1 is N div 10,EZ is RES + Mod,szsum(N1,EZ,Sum).
 ezsum(N,Sum):-szsum(N,0,Sum).
+
+
+max(Max,Max):-Max div 10 =:= 0,!.
+max(N,Max):-Max2 is N mod 10, N1 is N div 10,max(N1,Max1),(Max1>Max2 -> Max is Max1;Max is Max2).
+
+
