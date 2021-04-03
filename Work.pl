@@ -35,5 +35,10 @@ maximum(0,CosMax,CosMax):-!.
 maximum(N,RES,Max):-MAKZ is N mod 10,N1 is N div 10,(MAKZ>RES -> MAXI is MAKZ;MAXI is RES), maximum(N1,MAXI,Max).
 ezmax(N,Max):-maximum(N,0,Max).
 
+min(X,Y,Z):-X<Y,Z is X,!.
+min(_,Y,Z):-Z is Y,!.
+nod1(N1,N1,N1):-!.
+nod1(N1,N2,Nod):-max(N1,N2,Max),min(N1,N2,Min),M is Max-Min,((N1 =Max,nod1(M,N2,Nod),!);(nod1(N1,M,Nod),!)).
+
 
 
