@@ -204,5 +204,37 @@ pr_athletes:-
 
     write(Sport).
 
+pr_people:-
+    People=[_,_,_,_,_],
+    in_list(People,[serj,_,_]),
+    in_list(People,[boris,_,_]),
+    in_list(People,[leonid,_,_]),
+    in_list(People,[grigoriy,_,_]),
+    in_list(People,[viktor,_,_]),
+
+    in_list(People,[_,riga,_]),
+    in_list(People,[_,penza,_]),
+    in_list(People,[_,lvov,_]),
+    in_list(People,[_,harkov,_]),
+    in_list(People,[_,moscow,_]),
+
+    in_list(People,[_,_,riga]),
+    in_list(People,[_,_,penza]),
+    in_list(People,[_,_,lvov]),
+    in_list(People,[_,_,harkov]),
+    in_list(People,[_,_,moscow]),
+
+
+
+         not(in_list(People,[_,X,X])),
+in_list(People,[serj,_,riga]),
+in_list(People,[boris,riga,penza]),
+in_list(People,[leonid,X,_]),
+in_list(People,[grigoriy,_,harkov]),
+in_list(People,[viktor,lvov,moscow]),
+
+    in_list(People,[_,penza,X]),
+    write(People).
+
 
 
