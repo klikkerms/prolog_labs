@@ -35,3 +35,5 @@ maximum(0,CosMax,CosMax):-!.
 maximum(N,RES,Max):-MAKZ is N mod 10,N1 is N div 10,(MAKZ>RES -> MAXI is MAKZ;MAXI is RES), maximum(N1,MAXI,Max).
 ezmax(N,Max):-maximum(N,0,Max).
 
+
+
