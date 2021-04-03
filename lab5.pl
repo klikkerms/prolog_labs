@@ -130,5 +130,32 @@ pr_workers:-
      not(in_list(Workers,[borisov,locksmith,_,_,_,_])),
      write(Workers).
 
+pr_vessel:-
+    Vessel=[_,_,_,_],
+    in_list(Vessel,[butilka,_]),
+    in_list(Vessel,[stakan,_]),
+    in_list(Vessel,[kuvshin,_]),
+    in_list(Vessel,[banka,_]),
+
+    in_list(Vessel,[_,milk]),
+    in_list(Vessel,[_,limonad]),
+    in_list(Vessel,[_,kvas]),
+    in_list(Vessel,[_,water]),
+
+    not(in_list(Vessel,[butilka,water])),
+    not(in_list(Vessel,[butilka,milk])),
+
+    not(in_list(Vessel,[banka,limonad])),
+    not(in_list(Vessel,[banka,water])),
+
+
+   sleva_next([_,limonad],[kuvshin,_],Vessel), %ñîñóä ñ ëèìîíàäîì íàõîäèòñÿ ìåæäó êóâøèíîì
+   sprava_next([_,limonad],[_,kvas],Vessel),    % è ñîñóäîì ñ êâàñîì íàõîäèòñÿ ìåæäó êóâøèíîì
+
+    next_to([stakan,_],[banka,_],Vessel),  %Ñòàêàí íàõîäèòñÿ îêîëî áàíêè
+    next_to([stakan,_],[_,milk],Vessel),  % è ñîñóäà ñ ìîëîêîì  íàõîäèòñÿ îêîëî áàíêè
+
+    write(Vessel).
+
 
 
