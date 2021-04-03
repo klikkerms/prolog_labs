@@ -106,4 +106,29 @@ pr_girl:-
      write(Friend).
 
 
+pr_workers:-
+    Workers=[_,_,_],
+    in_list(Workers,[borisov,_,_,_,_,_]),
+    in_list(Workers,[ivanov,_,_,_,_,_]),
+    in_list(Workers,[semenov,_,_,_,_,_]),
+%ñëåñàðü,òîêàðü,ñâàðùèê
+    in_list(Workers,[_,locksmith,_,_,_,_]),
+    in_list(Workers,[_,turner,_,_,_,_]),
+    in_list(Workers,[_,welder,_,_,_,_]),
+
+    in_list(Workers,[_,_,brother,_,_,_]),
+    in_list(Workers,[_,_,_,_,_,sister]),
+    in_list(Workers,[_,_,_,old,_,_]),
+    in_list(Workers,[_,_,_,young,_,_]),
+    in_list(Workers,[_,_,_,_,married,_]),
+
+    in_list(Workers,[borisov,_,_,_,_,sister]),
+    in_list(Workers,[semenov,_,_,old,married,_]),
+
+     not(in_list(Workers,[_,locksmith,brother,old,_,sister])),
+     not(in_list(Workers,[semenov,turner,_,_,_,_])),
+     not(in_list(Workers,[borisov,locksmith,_,_,_,_])),
+     write(Workers).
+
+
 
