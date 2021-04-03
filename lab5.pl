@@ -157,5 +157,28 @@ pr_vessel:-
 
     write(Vessel).
 
+pr_talant:-
+    Talant=[_,_,_,_],
+    in_list(Talant,[voronov,_]),
+    in_list(Talant,[pavlov,_]),
+    in_list(Talant,[levitsky,_]),
+    in_list(Talant,[sakharov,_]),
+
+    in_list(Talant,[_,dancer]),
+    in_list(Talant,[_,painter]),
+    in_list(Talant,[_,singer]),
+    in_list(Talant,[_,writer]),
+
+    not(in_list(Talant,[voronov,singer])),%âîðîíîâ íå ïåâåö
+    not(in_list(Talant,[levitsky,singer])),%Ëåâèöêèé íå ïåâåç
+
+    not(in_list(Talant,[pavlov,painter])),%Ïàâëîâ íå õóäîæíèê
+    not(in_list(Talant,[pavlov,writer])),%ïàâëîâ íå ïèñàòåëü
+
+    not(in_list(Talant,[sakharov,writer])),%Ñàõàðîâ íå ïèñàòåëü
+    not(in_list(Talant,[voronov,writer])),%Âîðîíîâ íå ïèñàòåëü
+
+    write(Talant).
+
 
 
