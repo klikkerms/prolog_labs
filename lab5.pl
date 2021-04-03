@@ -180,5 +180,29 @@ pr_talant:-
 
     write(Talant).
 
+pr_athletes:-
+    Sport=[_,_,_],
+    in_list(Sport,[michael,_,basketball,_]),
+    in_list(Sport,[simon,israel,_,_]),
+    in_list(Sport,[richard,_,_,_]),
+    in_list(Sport,[_,australia,_,_]),
+    in_list(Sport,[_,_,cricket,1]),
+    in_list(Sport,[_,america,_,_]),
+    in_list(Sport,[_,_,tennis,_]),
+    in_list(Sport,[_,_,_,2]),
+    in_list(Sport,[_,_,_,3]),
+
+    in_list(Sport,[michael,_,_,Num1]),in_list(Sport,[_,america,_,Num2]),Num1<Num2,%Ìàéêë èãðàåò â áàñêåòáîë è èãðàåò ëó÷øå ÷åì àìåðèêàíåö
+    in_list(Sport,[simon,_,_,Num3]),in_list(Sport,[_,_,tennis,Num4]),Num3<Num4,%Ñàéìîí èãðàåò ëó÷øå òåííèñèñòà
+
+    not(in_list(Sport,[simon,_,tennis,_])),%Ñàéìîí íå òåííèñèñò
+    not(in_list(Sport,[michael,america,_,_])),%Ìàéêë íå àìåðèêàíåö
+
+
+    in_list(Sport,[WHO1,australia,_,_]),write("Àâñòðàëèåö ýòî - "), write(WHO1),nl,
+    in_list(Sport,[richard,_,THAN,_]),write("Ðè÷àðä óâëåêàåòñÿ - "), write(THAN),nl,
+
+    write(Sport).
+
 
 
