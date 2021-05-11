@@ -25,3 +25,8 @@ reverse_list([H|T],Buffer,ListR):-reverse_list(T,[H|Buffer],ListR).
 
 
 wr_str:-read_str(A,Length),write_str(A),write(","),write_str(A),write(","),write_str(A),write(","),write(Length).
+
+%2
+kol_w:-read_str(A,_),append1([32],A,A1),kol_slow(A1,0,Kol),write(Kol).
+kol_slow([_|[]],Kol,Kol):-!.
+kol_slow([H1|[H2|T]],K,Kol):-(H1=32,H2\=32 -> K1 is K+1,kol_slow([H2|T],K1,Kol);kol_slow([H2|T],K,Kol)).
