@@ -244,5 +244,20 @@ delete_elem_num([_|Tail],0,Tail):- !.
 delete_elem_num([Head|Tail1],Num,[Head|Tail2]):-
 Num1 is Num-1, delete_elem_num(Tail1,Num1,Tail2).
 
+% 6
+prarrange2:- see('C:/Users/Rozz/Desktop/Roma/1.txt'), read_str_count_words(List,CountWordsList),
+seen, sort_list(List,CountWordsList,[],SList), write1(SList).
+
+read_str_count_words(List,CountWordsList):- read_str(A,_,Flag), append([32],A,B),
+count_words(B,0,C), read_str_count_words([A],List,[C],CountWordsList,Flag).
+
+read_str_count_words(List,List,CountWordsList,CountWordsList,1):-!.
+
+read_str_count_words(Cur_list,List,CurCountWordsList,CountWordsList,0):-
+read_str(A,_,Flag), append([32],A,B), append(Cur_list,[A],C_l),
+count_words(B,0,C), append(CurCountWordsList, [C], NewCountWordsList),
+read_str_count_words(C_l,List,NewCountWordsList,CountWordsList,Flag).
+
+
 
 
