@@ -53,3 +53,24 @@ read_list_str_space(Cur_list,List,CurC,C,0):-
 read_str_symbol(A,Count,32,Flag), append(Cur_list,[A],C_l),
 (Count = 0 -> C1 is CurC+1; C1 is CurC),
 read_list_str_space(C_l,List,C1,C,Flag).
+
+%1.3
+prmore_than_A:- see('C:/Users/Rozz/Desktop/Roma/1.txt'), count_A(_,N,C), M is C/N,
+seen, see('C:/Users/Rozz/Desktop/Roma/1.txt'), read_list_str_A(_,M), seen.
+
+count_A(List,N,C):- read_str_symbol(_,Count,65,Flag),
+N1 = 1, count_A(List,N1,N,Count,C,Flag).
+count_A(_,N,N,C,C,1):-!.
+count_A(List,CurN,N,CurC,C,0):- read_str_symbol(_,Count,65,Flag),
+C1 is CurC + Count, N1 is CurN + 1,
+count_A(List,N1,N,C1,C,Flag).
+
+read_list_str_A(List, M):- read_str_symbol(A,Count,65,Flag),
+(Count > M -> write_str(A), nl; true), read_list_str_A(List,M,Flag).
+
+read_list_str_A(_,_,1):-!.
+
+read_list_str_A(List,M,0):-
+read_str_symbol(A,Count,65,Flag), (Count > M -> write_str(A),nl; true),
+read_list_str_A(List,M,Flag).
+
