@@ -33,3 +33,23 @@ max(List, MaxEl):- max(List, 0, MaxEl).
 max([],CurMax, CurMax):- !.
 max([H|T], CurMax, X):- H > CurMax, NewMax is H, max(T,NewMax,X), !.
 max([_|T], CurMax, X):- max(T, CurMax, X).
+
+%1.2
+prno_spaces:- see('C:/Users/Rozz/Desktop/Roma/1.txt'), read_list_str_space(_, C),
+seen, write("C = "), write(C).
+
+read_str_symbol(A,Count,S,Flag):- get0(X), r_str_symbol(X,A,[],Count,0,S,Flag).
+r_str_symbol(-1,A,A,Count,Count,_,1):-!.
+r_str_symbol(10,A,A,Count,Count,_,0):-!.
+r_str_symbol(X,A,B,Count,C,S,Flag):- append(B,[X],B1), get0(X1),
+(X = S -> C1 is C+1; C1 is C), r_str_symbol(X1,A,B1,Count,C1,S,Flag).
+
+read_list_str_space(List, C):- read_str_symbol(A,Count,32,Flag),
+(Count = 0 -> C1 = 1; C1 = 0), read_list_str_space([A],List,C1,C,Flag).
+
+read_list_str_space(List,List,C,C,1):-!.
+
+read_list_str_space(Cur_list,List,CurC,C,0):-
+read_str_symbol(A,Count,32,Flag), append(Cur_list,[A],C_l),
+(Count = 0 -> C1 is CurC+1; C1 is CurC),
+read_list_str_space(C_l,List,C1,C,Flag).
