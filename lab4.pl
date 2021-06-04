@@ -118,5 +118,9 @@ sravn([H|T],[_|T1]):-sravn([H|T],T1).
 delet_num([_|T],0,T):-!.
 delet_num([H|T],N,[H|T1]):-N1 is N-1,delet_num(T,N1,T1).
 
+%13
+delet_all([],_,[]):-!.
+delet_all([H|T],El,[H|T1]):-H=\=El,delet_all(T,El,T1),!.
+delet_all([_|T],El,T1):-delet_all(T,El,T1).
 
 
