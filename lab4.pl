@@ -114,5 +114,9 @@ ravenstvo([H|T],[H1|T1]):- H is H1 ,ravenstvo(T,T1).
 sravn([H|T],[H1|T1]):-ravenstvo([H|T],[H1|T1]).
 sravn([H|T],[_|T1]):-sravn([H|T],T1).
 
+%12
+delet_num([_|T],0,T):-!.
+delet_num([H|T],N,[H|T1]):-N1 is N-1,delet_num(T,N1,T1).
+
 
 
