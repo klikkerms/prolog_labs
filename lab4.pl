@@ -123,4 +123,9 @@ delet_all([],_,[]):-!.
 delet_all([H|T],El,[H|T1]):-H=\=El,delet_all(T,El,T1),!.
 delet_all([_|T],El,T1):-delet_all(T,El,T1).
 
+%14
+check_is(_,[]):-!.
+check_is(X,[H|T]):- X =\= H,check_is(X,T).
+check([H|T]):-check_is(H,T),check(T).
+check([]):-!.
 
