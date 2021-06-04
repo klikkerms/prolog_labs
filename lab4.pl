@@ -98,4 +98,9 @@ read_min_elem_list(N):-
     write("Min elem = "),min_list_down(List,X),
     write(X),nl,false.
 
+%9
+elem([X,_],X):-!.
+elem([_|T],X):-elem(T,X).
+
+
 
