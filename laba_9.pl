@@ -105,6 +105,20 @@ number_3_:-make_ar(5,Pos),sochet(Pos_a,2,Pos),put_pos(Word,Pos_a,[97]),
 		 in_free_pos(Word,S3),
 		 write_str(Word),nl,fail.
 
+       %4
+number_4:-tell('C:/Users/Rozz/Desktop/лаба.txt'),not(number_4_),told.
+number_4_:-make_ar(5,Pos),sochet(Pos_simb,2,Pos),in_list([97,98,99,100,101,102],Simbol),
+		 put_pos(Word,Pos_simb,[Simbol]),in_list_exlude([97,98,99,100,101,102],Simbol,List),
+		 in_list_exlude(List,S1,NList),
+		 in_free_pos(Word,S1),
+		 in_list_exlude(NList,S2,NList1),
+		 in_free_pos(Word,S2),
+		 in_list_exlude(NList1,S3,_),
+		 in_free_pos(Word,S3),
+		 write_str(Word),nl,fail.
+
+
+
 
 
 
