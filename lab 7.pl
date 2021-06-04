@@ -38,7 +38,36 @@ min_all:-write("Ââĺäčňĺ ęîëč÷ĺńňâî ýëĺěĺíňîâ"),nl,read
 prov_el([El|_],El):-!.
 prov_el([_|T], El):-prov_el(T, El).
 
+zam(List,List1):-zam(List,[],List1).
+zam([],List1,List1).
+zam([H|List],Temp,List1):-zam(List,[H|Temp],List1).
 
+p([],_):-!.
+p([Head|Tail],[HeadList|TailList]):-(Head is HeadList -> p(Tail,TailList);p([Head|Tail],TailList)).
+
+del(0,[_|Z], Z):-!.
+del(N,[H|Y],[H|Z]):-N1 is N-1,del(N1,Y,Z).
+
+del_elem([],_,[]).
+del_elem([H|T],X,List):-(H=X->del_elem(T,X,List);List=[H|T1],del_elem(T,X,T1)).
+
+chek(_,[]):-!.
+chek([H|T]):-chek(H,T),chek(T).
+chek(X,[H|T]):- X\= H,chek(X,T).
+chek([]):-!.
+
+unik([],[]):-!.
+lunik([H|T],T1):-prov_el(T,H),unik(T,T1),!.
+unik([H|T],[H|T1]):-unik(T,T1),!.
+
+kol(List,X,C):-kol(List,X,0,C).
+kol([],_,C,C):-!.
+kol([H|T],X,C,C2):-H==X, C1 is C + 1,kol(T,X,C1,C2),!.
+kol([_|T],X,C,C2):-kol(T,X,C,C2),!.
+
+dlina(List,Sum):-dlina(List,Sum,0).
+dlina([],Sum,Sum):-!.
+dlina([_|T],Sum,Dl):-Dl1 is Dl+1,dlina(T,Sum,Dl1).
 
 
 
