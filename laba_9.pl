@@ -238,7 +238,18 @@ in_free_pos9([H1,H2,H3,H4,H5,H6,H7,H8,H9],Sim):-(var(H1)->H1 is Sim),!;
 
 
 
-
+      %9
+number_9:-tell('C:/Users/Rozz/Desktop/лаба.txt'),not(number_9_),nl,told.
+number_9_:-make_ar(7,Pos),sochet(Pos_a,3,Pos),put_pos73(Word,Pos_a,[97]),
+		 in_list([97,98,99,100,101,102],S1),
+		 in_free_pos7(Word,S1),
+		 in_list([97,98,99,100,101,102],S2),
+		 in_free_pos7(Word,S2),
+		 in_list([97,98,99,100,101,102],S3),
+		 in_free_pos7(Word,S3),
+		 in_list([97,98,99,100,101,102],S3),
+		 in_free_pos7(Word,S3),
+		 write_str(Word),nl,fail.
 
 
 
