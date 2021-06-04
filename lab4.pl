@@ -102,5 +102,10 @@ read_min_elem_list(N):-
 elem([X,_],X):-!.
 elem([_|T],X):-elem(T,X).
 
+%10
+reverse(L,X):-rev(L,[],X).
+rev([],X,X):-!.
+rev([H|T],CurL,X):-rev(T,[H|CurL],X).
+
 
 
