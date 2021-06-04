@@ -65,5 +65,11 @@ read_list_el(N):-
     write("Element: "),list_el_numb(List,X,Numb),
     write(X),nl,false.
 
+%6
+min(X,Y,X):-X<Y,!.
+min(_,Y,Y):-!.
+
+min_list_up([H],H):-!.
+min_list_up([H|T],Min):-min_list_up(T,Min1),min(H,Min1,Min).
 
 
