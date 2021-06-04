@@ -142,4 +142,8 @@ kolwo([H|T],X,K):-kolw([H|T],X,K,0).
 kolw([],_,K,K):-!.
 kolw([H|T],X,K,Tec):-(H is X -> T1 is  Tec+1;T1 is Tec),kolw(T,X,K,T1).
 
+%17
+lenght([],N,N):-!.
+lenght([_|Tail],I,N):-NewI is I+1,lenght(Tail,NewI,N).
+lenght(List,N):-lenght(List,0,N).
 
