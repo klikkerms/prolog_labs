@@ -94,6 +94,16 @@ in_free_pos([H1,H2,H3,H4,H5],Sim):-(var(H1)->H1 is Sim),!;
 								  (var(H4)->H4 is Sim),!;
 								  (var(H5)->H5 is Sim).
 
+       %3
+number_3:-tell('C:/Users/Rozz/Desktop/лаба.txt'),not(number_3_),told.
+number_3_:-make_ar(5,Pos),sochet(Pos_a,2,Pos),put_pos(Word,Pos_a,[97]),
+		 in_list_exlude([98,99,100,101,102],S1,NList),
+		 in_free_pos(Word,S1),
+		 in_list_exlude(NList,S2,NList1),
+		 in_free_pos(Word,S2),
+		 in_list_exlude(NList1,S3,_),
+		 in_free_pos(Word,S3),
+		 write_str(Word),nl,fail.
 
 
 
