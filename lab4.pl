@@ -137,3 +137,9 @@ delet_all([_|T],El,T1):-delet_all(T,El,T1).
 make_this([],[]):-!.
 make_this([H|T],[H|T1]):-delet_all([H|T],H,New),make_this(New,T1).
 
+%16
+kolwo([H|T],X,K):-kolw([H|T],X,K,0).
+kolw([],_,K,K):-!.
+kolw([H|T],X,K,Tec):-(H is X -> T1 is  Tec+1;T1 is Tec),kolw(T,X,K,T1).
+
+
